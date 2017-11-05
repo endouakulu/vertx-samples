@@ -6,9 +6,6 @@ public class SettingRequest {
     private String code;
     private String value;
 
-    public SettingRequest() {
-    }
-
     public String getUuid() {
         return uuid;
     }

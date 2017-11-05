@@ -6,7 +6,6 @@ import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServer;
 import io.vertx.core.json.Json;
-import io.vertx.core.json.JsonObject;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 import io.vertx.core.logging.SLF4JLogDelegateFactory;
@@ -22,7 +21,7 @@ public class CurrencyMicroservice extends AbstractVerticle {
     private static Logger logger = LoggerFactory.getLogger(CurrencyMicroservice.class);
 
     @Override
-    public void start(Future<Void> startFuture) throws Exception{
+    public void start(Future<Void> startFuture) throws Exception {
         super.start(startFuture);
         System.setProperty(LoggerFactory.LOGGER_DELEGATE_FACTORY_CLASS_NAME, SLF4JLogDelegateFactory.class.getName());
 
@@ -32,10 +31,10 @@ public class CurrencyMicroservice extends AbstractVerticle {
         settingRestApiRouter.route().handler(BodyHandler.create());
 
         settingRestApiRouter.get("/currency/rates").handler(routingContext -> {
-            client.get(80,"api.fixer.io","/latest")
-                    .addQueryParam("symbols","USD")
-                    .send(ar ->{
-                        if(ar.succeeded()) {
+            client.get(80, "api.fixer.io", "/latest")
+                    .addQueryParam("symbols", "USD")
+                    .send(ar -> {
+                        if (ar.succeeded()) {
                             HttpResponse<Buffer> response = ar.result();
                             logger.info(response.bodyAsString());
                             routingContext.response()
