@@ -1,0 +1,10 @@
+*.iml
+**/*.iml
+.idea/
+
+# Vert-X
+.vert/**
+
+# Maven
+**/log/
+**/target/
