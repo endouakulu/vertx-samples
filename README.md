@@ -1,5 +1,29 @@
 # vertx-samples
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1f072ded5fbf4fd4a6752b00305b30ea)](https://www.codacy.com/app/eric.ndouakulu/vertx-samples?utm_source=github.com&utm_medium=referral&utm_content=endouakulu/vertx-samples&utm_campaign=badger)
+This project aims to demonstrate how we can build reactive apps with vert-x.
 
-vertx-samples
+## Prerequistes
+
+* JDK 14 
+* A decent IDE
+* Docker
+
+### Notes 
+_I think I will migrate to JDK 15._
+
+## First app - Display Hello World
+
+Starts an HTTP server which displays hello world in the browser.
+
+### How it works 
+
+#### IDE
+
+With your preferred IDE, run the Main class.
+
+
+#### Command line
+
+``mvn clean package``
+
+``java -jar target/vertx-sammples-1.0.SNAPSHOT-fat.jar``
